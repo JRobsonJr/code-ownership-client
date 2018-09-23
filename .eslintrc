@@ -6,6 +6,7 @@
         "node": true
     },
     "plugins": [
+        "flowtype",
         "react",
         "jsx-a11y",
         "import"
