@@ -2,9 +2,11 @@
 
 import React from 'react';
 
+import ProjectPage from '../project-page/ProjectPage';
+
 const App = () => (
     <div>
-        Ready to go!
+        <ProjectPage />
     </div>
 );
 
