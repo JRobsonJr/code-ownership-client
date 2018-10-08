@@ -5,7 +5,7 @@ class Student {
     image: string;
     aliases: Array<string>;
 
-    constructor(name, image) {
+    constructor(name: string, image: string) {
         this.name = name;
         this.image = image;
         this.aliases = [];

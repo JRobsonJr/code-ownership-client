@@ -3,7 +3,7 @@
 class Artifact {
     path: string;
 
-    constructor(path) {
+    constructor(path: string) {
         this.path = path;
     }
 }
