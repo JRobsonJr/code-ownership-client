@@ -6,44 +6,48 @@ import {
     Grid,
     Typography,
     List,
-    ListItem,
-    ListItemAvatar,
-    Avatar,
-    ListItemText,
+    Paper,
+    Divider,
+    withStyles,
 } from '@material-ui/core';
 
+import StudentListItem from './StudentListItem';
+
+import { Student } from '../../api/models';
+
 type Props = {
-    students: Array<any>,
+    students: Array<Student>,
+    classes: any,
 };
 
-const StudentList = ({ students }: Props) => {
+const styles = theme => ({
+    title: {
+        marginTop: theme.spacing.unit,
+        padding: theme.spacing.unit,
+    },
+});
+
+const StudentList = ({ classes, students }: Props) => {
     const studentListItems = students
         .map(student => <StudentListItem student={student} />);
+
     return (
-        <Grid item xs={12} md={6}>
-            <Typography variant="title">
-                Students
-            </Typography>
-            <div>
+        <Grid item xs={6}>
+            <Paper elevation={2}>
+                <Typography
+                  className={classes.title}
+                  variant="title"
+                  align="center"
+                >
+                    STUDENTS
+                </Typography>
+                <Divider />
                 <List>
                     {studentListItems}
                 </List>
-            </div>
+            </Paper>
         </Grid>
     );
 };
 
-type ListItemProps = {
-    student:any,
-};
-
-const StudentListItem = ({ student }: ListItemProps) => (
-    <ListItem>
-        <ListItemAvatar>
-            <Avatar src={student.image} />
-        </ListItemAvatar>
-        <ListItemText primary={student.name} />
-    </ListItem>
-);
-
-export default StudentList;
+export default withStyles(styles)(StudentList);
