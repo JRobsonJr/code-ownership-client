@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import{
+import {
     Grid,
     Typography,
     List,
@@ -49,4 +49,4 @@ const ArtifactList = ({ artifacts }: Props) => {
 };
 
 
-export default  withStyles(styles)(ArtifactList);
+export default withStyles(styles)(ArtifactList);

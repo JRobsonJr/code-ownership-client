@@ -7,10 +7,8 @@ import { Grid } from '@material-ui/core';
 import StudentList from './StudentList';
 import ArtifactList from './ArtifactList';
 
-import { getStudents } from '../../api/mock-api';
-import { getArtifacts } from '../../api/mock-api';
-import { Student } from '../../api/models';
-import { Artifact } from '../../api/models';
+import { getStudents, getArtifacts } from '../../api/mock-api';
+import { Student, Artifact } from '../../api/models';
 
 type State = {
     students: Array<Student>,
@@ -35,8 +33,8 @@ class ProjectPage extends Component<{}, State> {
               container
               justify="center"
             >
-                    <StudentList students={students} />
-                    <ArtifactList artifacts={artifacts} />   
+                <StudentList students={students} />
+                <ArtifactList artifacts={artifacts} />
             </Grid>
         );
     }
