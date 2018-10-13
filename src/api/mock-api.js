@@ -22,7 +22,7 @@ export const getStudents = () => {
 };
 
 export const getArtifacts = () => [
-    new Artifact('src/main/Main.java'),
-    new Artifact('src/genre/Genre.java'),
-    new Artifact('src/genre/Pop.java'),
+    new Artifact('src/main/Main.java', ["Arquivos", "Exception"]),
+    new Artifact('src/genre/Genre.java', ["Herança", "Interface"]),
+    new Artifact('src/genre/Pop.java', ["Teste"]),
 ];
