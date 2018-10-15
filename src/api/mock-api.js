@@ -2,6 +2,8 @@
 
 import { Student, Artifact } from './models';
 
+export const getProjectName = () => 'homemade-dynamite';
+
 export const getStudents = () => {
     const david = new Student('David', 'https://goo.gl/9b23Uw');
     david.addAlias('davidedup');
