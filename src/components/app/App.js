@@ -2,10 +2,28 @@
 
 import React from 'react';
 
+import {
+    CssBaseline,
+    createMuiTheme,
+    MuiThemeProvider,
+} from '@material-ui/core';
+
+import ProjectPage from '../project-page/ProjectPage';
+
+const theme = createMuiTheme({
+    palette: {
+        background: { default: '#f0f0f0' },
+    },
+    typography: {
+        fontFamily: '"Roboto", sans-serif',
+    },
+});
+
 const App = () => (
-    <div>
-        Ready to go!
-    </div>
+    <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <ProjectPage />
+    </MuiThemeProvider>
 );
 
 export default App;
