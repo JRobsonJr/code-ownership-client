@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 
 import ProjectPage from '../project-page/ProjectPage';
+import StudentPage from '../student-page/StudentPage';
 
 const theme = createMuiTheme({
     palette: {
@@ -22,7 +23,7 @@ const theme = createMuiTheme({
 const App = () => (
     <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <ProjectPage />
+        <StudentPage />
     </MuiThemeProvider>
 );
 
