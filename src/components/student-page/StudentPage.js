@@ -1,11 +1,13 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Grid, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core';
 
-import StudentInfo from '../student-page/StudentInfo';
+import StudentInfo from './StudentInfo';
 import StudentArtifacts from './StudentArtifacts';
+
 import { getArtifacts } from '../../api/mock-api';
+import { Artifact } from '../../api/models';
 
 const styles = theme => ({
     root: {
@@ -13,17 +15,25 @@ const styles = theme => ({
     },
 });
 
+type Props = {
+    classes: any;
+};
+
+type State = {
+    studentName: string;
+    studentPicture: string;
+    studentArtifacts: Artifact[];
+};
 
 class StudentPage extends Component<Props, State> {
     constructor() {
         super();
 
         this.state = {
-            studentName:  "David",
+            studentName: 'David',
             studentPicture: 'https://goo.gl/9b23Uw',
-            studentArtifacts: getArtifacts()
+            studentArtifacts: getArtifacts(),
         };
-
     }
 
     render() {
@@ -39,8 +49,11 @@ class StudentPage extends Component<Props, State> {
                   direction="row"
                   justify="center"
                 >
-                    <StudentInfo studentName = {studentName} studentPicture = {studentPicture}/>
-                    <StudentArtifacts studentArtifact = {studentArtifacts} />
+                    <StudentInfo
+                      studentName={studentName}
+                      studentPicture={studentPicture}
+                    />
+                    <StudentArtifacts artifacts={studentArtifacts} />
                 </Grid>
             </div>
         );

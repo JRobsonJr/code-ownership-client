@@ -11,7 +11,7 @@ type Props = {
 const StudentInfo = ({ studentName, studentPicture }: Props) => (
     <Grid item xs={5} xl={12}>
         <Paper elevation={3}>
-            <Grid item xs={12}  align="center">
+            <Grid item xs={12} align="center">
                 <Avatar src={studentPicture} />
             </Grid>
             <Typography
@@ -22,15 +22,7 @@ const StudentInfo = ({ studentName, studentPicture }: Props) => (
                 {studentName}
             </Typography>
         </Paper>
-        
     </Grid>
-    
 );
-
-const styles = theme => ({
-    root: {
-        padding: theme.spacing.unit,
-    },
-});
 
 export default StudentInfo;

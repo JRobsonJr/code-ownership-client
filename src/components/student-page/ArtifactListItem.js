@@ -15,12 +15,12 @@ type Props = {
 };
 
 const ArtifactListItem = ({ artifact }: Props) => {
-    const path = artifact.path
+    const pathChip = artifact.path
         .map(path => <Chip variant="outlined" label={path} />);
 
     return (
         <ListItem>
-            <ListItemText primary={path}/>
+            <ListItemText primary={pathChip} />
         </ListItem>
     );
 };
