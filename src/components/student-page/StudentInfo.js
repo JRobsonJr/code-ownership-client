@@ -39,8 +39,4 @@ const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
     </Grid>
 );
 
-<<<<<<< HEAD
 export default withStyles(styles)(StudentInfo);
-=======
-export default StudentInfo;
->>>>>>> 9f7949afbfce55f437ef3cd16b7303a2269efdef
