@@ -20,7 +20,7 @@ const ArtifactListItem = ({ artifact }: Props) => {
 
     return (
         <ListItem>
-            <ListItemText primary={artifact.path} secondary={path}/>
+            <ListItemText primary={artifact.path} secondary={path} />
         </ListItem>
     );
 };

@@ -12,7 +12,7 @@ const styles = {
     },
     paper: {
         paddingTop: 1,
-    }
+    },
 };
 
 type Props = {
@@ -24,9 +24,8 @@ type Props = {
 const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
     <Grid item xs={5} xl={12}>
         <Paper elevation={3}>
-            <Grid item xs={12}  align="center" className={classes.paper}>
-                <Avatar src={studentPicture} className={classes.bigAvatar}/>
-
+            <Grid item xs={12} align="center" className={classes.paper}>
+                <Avatar src={studentPicture} className={classes.bigAvatar} />
             </Grid>
             <Typography
               variant="display3"
