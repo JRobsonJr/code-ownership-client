@@ -22,12 +22,7 @@ const theme = createMuiTheme({
 const App = () => (
     <MuiThemeProvider theme={theme}>
         <CssBaseline />
-<<<<<<< HEAD
-        <StudentPage />
-        {/* <ProjectPage /> */}
-=======
         <MainContent />
->>>>>>> 9f7949afbfce55f437ef3cd16b7303a2269efdef
     </MuiThemeProvider>
 );
 
