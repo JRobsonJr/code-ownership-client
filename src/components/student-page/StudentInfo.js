@@ -2,17 +2,30 @@
 
 import React from 'react';
 import { Grid, Paper, Typography, Avatar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+    bigAvatar: {
+        width: 80,
+        height: 80,
+        marginTop: 16,
+    },
+    paper: {
+        paddingTop: 1,
+    }
+};
 
 type Props = {
     studentName: string,
-    studentPicture: string
+    studentPicture: string,
+    classes: any,
 }
 
-const StudentInfo = ({ studentName, studentPicture }: Props) => (
+const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
     <Grid item xs={5} xl={12}>
         <Paper elevation={3}>
-            <Grid item xs={12}  align="center">
-                <Avatar src={studentPicture} />
+            <Grid item xs={12}  align="center" className={classes.paper}>
+                <Avatar src={studentPicture} className={classes.bigAvatar}/>
             </Grid>
             <Typography
               variant="display3"
@@ -27,10 +40,4 @@ const StudentInfo = ({ studentName, studentPicture }: Props) => (
     
 );
 
-const styles = theme => ({
-    root: {
-        padding: theme.spacing.unit,
-    },
-});
-
-export default StudentInfo;
+export default withStyles(styles)(StudentInfo);

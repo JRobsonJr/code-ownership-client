@@ -40,7 +40,7 @@ class StudentPage extends Component<Props, State> {
                   justify="center"
                 >
                     <StudentInfo studentName = {studentName} studentPicture = {studentPicture}/>
-                    <StudentArtifacts studentArtifact = {studentArtifacts} />
+                    <StudentArtifacts artifacts = {studentArtifacts} />
                 </Grid>
             </div>
         );

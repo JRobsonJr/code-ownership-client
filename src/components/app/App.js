@@ -24,6 +24,7 @@ const App = () => (
     <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <StudentPage />
+        {/* <ProjectPage /> */}
     </MuiThemeProvider>
 );
 
