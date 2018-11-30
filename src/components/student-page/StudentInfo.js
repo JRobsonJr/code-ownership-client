@@ -4,6 +4,8 @@ import React from 'react';
 import { Grid, Paper, Typography, Avatar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
+import { Student } from '../../api/models';
+
 const styles = {
     bigAvatar: {
         width: 80,
@@ -16,23 +18,22 @@ const styles = {
 };
 
 type Props = {
-    studentName: string,
-    studentPicture: string,
+    student: Student;
     classes: any,
 }
 
-const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
+const StudentInfo = ({ student, classes }: Props) => (
     <Grid item xs={5} xl={12}>
         <Paper elevation={3}>
             <Grid item xs={12} align="center" className={classes.paper}>
-                <Avatar src={studentPicture} className={classes.bigAvatar} />
+                <Avatar src={student.image} className={classes.bigAvatar} />
             </Grid>
             <Typography
               variant="display3"
               align="center"
               color="textPrimary"
             >
-                {studentName}
+                {student.name}
             </Typography>
         </Paper>
     </Grid>

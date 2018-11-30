@@ -6,8 +6,8 @@ import { Grid, withStyles } from '@material-ui/core';
 import StudentInfo from './StudentInfo';
 import StudentArtifacts from './StudentArtifacts';
 
-import { getArtifacts } from '../../api/mock-api';
-import { Artifact } from '../../api/models';
+import { getStudent, getArtifacts } from '../../api/mock-api';
+import { Student, Artifact } from '../../api/models';
 
 const styles = theme => ({
     root: {
@@ -17,28 +17,28 @@ const styles = theme => ({
 
 type Props = {
     classes: any;
+    match: any;
 };
 
 type State = {
-    studentName: string;
-    studentPicture: string;
-    studentArtifacts: Artifact[];
+    student: Student;
+    studentContributions: Artifact[]; // Change
 };
 
 class StudentPage extends Component<Props, State> {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
+        const studentId = this.props.match.params.id;
         this.state = {
-            studentName: 'David',
-            studentPicture: 'https://goo.gl/9b23Uw',
-            studentArtifacts: getArtifacts(),
+            student: getStudent(studentId),
+            studentContributions: getArtifacts()
         };
     }
 
     render() {
         const { classes } = this.props;
-        const { studentName, studentPicture, studentArtifacts } = this.state;
+        const { student } = this.state;
 
         return (
             <div className={classes.root}>
@@ -49,11 +49,8 @@ class StudentPage extends Component<Props, State> {
                   direction="row"
                   justify="center"
                 >
-                    <StudentInfo
-                      studentName={studentName}
-                      studentPicture={studentPicture}
-                    />
-                    <StudentArtifacts artifacts={studentArtifacts} />
+                    <StudentInfo student={student} />
+                    <StudentArtifacts artifacts={studentContributions} />
                 </Grid>
             </div>
         );
