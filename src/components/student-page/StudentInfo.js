@@ -26,6 +26,7 @@ const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
         <Paper elevation={3}>
             <Grid item xs={12}  align="center" className={classes.paper}>
                 <Avatar src={studentPicture} className={classes.bigAvatar}/>
+
             </Grid>
             <Typography
               variant="display3"
@@ -35,9 +36,11 @@ const StudentInfo = ({ studentName, studentPicture, classes }: Props) => (
                 {studentName}
             </Typography>
         </Paper>
-        
     </Grid>
-    
 );
 
+<<<<<<< HEAD
 export default withStyles(styles)(StudentInfo);
+=======
+export default StudentInfo;
+>>>>>>> 9f7949afbfce55f437ef3cd16b7303a2269efdef
