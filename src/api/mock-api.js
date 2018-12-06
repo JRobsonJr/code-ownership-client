@@ -23,7 +23,7 @@ export const getStudents = () => {
     return [david, robson, mariana, matheus];
 };
 
-export const getStudent = index => getStudents()[index];
+export const getStudent = (index: number) => getStudents()[index];
 
 export const getArtifacts = () => [
     new Artifact('src/main/Main.java', ['Arquivos', 'Exception']),
@@ -31,7 +31,7 @@ export const getArtifacts = () => [
     new Artifact('src/genre/Pop.java', ['Teste']),
 ];
 
-export const getStudentContributions = (index) => {
+export const getStudentContributions = (index: number) => {
     console.log(getStudent(index));
     const artifacts = getArtifacts();
 
