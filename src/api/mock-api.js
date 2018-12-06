@@ -1,6 +1,6 @@
 /* @flow */
 
-import { Student, Artifact, PairStudentArtifact } from './models';
+import { Student, Artifact, Contribution } from './models';
 
 export const getProjectName = () => 'homemade-dynamite';
 
@@ -23,21 +23,21 @@ export const getStudents = () => {
     return [david, robson, mariana, matheus];
 };
 
-export const getStudent = (index) => getStudents()[index];
-
-export const getStudentContributions = (index) => {
-    const student = getStudent(index);
-    const artifacts = getArtifacts();
-
-    return [
-        new PairStudentArtifact(student, artifacts[0], 0.90),
-        new PairStudentArtifact(student, artifacts[1], 0.45),
-        new PairStudentArtifact(student, artifacts[2], 0)
-    ];
-};
+export const getStudent = index => getStudents()[index];
 
 export const getArtifacts = () => [
     new Artifact('src/main/Main.java', ['Arquivos', 'Exception']),
     new Artifact('src/genre/Genre.java', ['Herança', 'Interface']),
     new Artifact('src/genre/Pop.java', ['Teste']),
 ];
+
+export const getStudentContributions = (index) => {
+    console.log(getStudent(index));
+    const artifacts = getArtifacts();
+
+    return [
+        new Contribution(artifacts[0], 0.90),
+        new Contribution(artifacts[1], 0.45),
+        new Contribution(artifacts[2], 0),
+    ];
+};
