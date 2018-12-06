@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import { Grid, withStyles } from '@material-ui/core';
 
 import StudentInfo from './StudentInfo';
-import StudentArtifacts from './StudentArtifacts';
+import ContributionList from './ContributionList';
 
-import { getStudent, getArtifacts } from '../../api/mock-api';
-import { Student, Artifact } from '../../api/models';
+import { getStudent, getStudentContributions } from '../../api/mock-api';
+import { Student, Contribution } from '../../api/models';
 
 const styles = theme => ({
     root: {
@@ -22,7 +22,7 @@ type Props = {
 
 type State = {
     student: Student;
-    studentContributions: Artifact[]; // Change
+    studentContributions: Contribution[];
 };
 
 class StudentPage extends Component<Props, State> {
@@ -32,13 +32,13 @@ class StudentPage extends Component<Props, State> {
         const studentId = this.props.match.params.id;
         this.state = {
             student: getStudent(studentId),
-            studentContributions: getArtifacts()
+            studentContributions: getStudentContributions(studentId),
         };
     }
 
     render() {
         const { classes } = this.props;
-        const { student } = this.state;
+        const { student, studentContributions } = this.state;
 
         return (
             <div className={classes.root}>
@@ -50,7 +50,7 @@ class StudentPage extends Component<Props, State> {
                   justify="center"
                 >
                     <StudentInfo student={student} />
-                    <StudentArtifacts artifacts={studentContributions} />
+                    <ContributionList contributions={studentContributions} />
                 </Grid>
             </div>
         );

@@ -1,6 +1,7 @@
 /* @flow */
 
 import React from 'react';
+
 import { Grid, Paper, Typography, Avatar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -8,12 +9,11 @@ import { Student } from '../../api/models';
 
 const styles = {
     bigAvatar: {
-        width: 80,
-        height: 80,
-        marginTop: 16,
+        width: 200,
+        height: 200,
     },
     paper: {
-        paddingTop: 1,
+        padding: 20,
     },
 };
 
@@ -23,17 +23,16 @@ type Props = {
 }
 
 const StudentInfo = ({ student, classes }: Props) => (
-    <Grid item xs={5} xl={12}>
-        <Paper elevation={3}>
-            <Grid item xs={12} align="center" className={classes.paper}>
+    <Grid item xs={8} xl={12}>
+        <Paper className={classes.paper} elevation={3}>
+            <Grid item xs={12} align="center">
                 <Avatar src={student.image} className={classes.bigAvatar} />
             </Grid>
-            <Typography
-              variant="display3"
-              align="center"
-              color="textPrimary"
-            >
+            <Typography variant="display3" align="center" color="textPrimary">
                 {student.name}
+            </Typography>
+            <Typography variant="title" align="center" color="textPrimary">
+                {`Also known as: ${student.aliases.join(', ')}`}
             </Typography>
         </Paper>
     </Grid>
