@@ -3,7 +3,7 @@
 import React from 'react';
 
 import StudentListItem from './StudentListItem';
-import EntityList from './EntityList';
+import EntityList from '../common/EntityList';
 
 import { Student } from '../../api/models';
 
