@@ -26,7 +26,7 @@ type Props = {
 }
 
 const StudentInfo = ({ student, classes }: Props) => (
-    <Grid item xs={8} xl={12} align="center">
+    <Grid item xs={8} align="center">
         <Paper className={classes.paper} elevation={3}>
             <Grid item xs={12} align="center">
                 <Avatar src={student.image} className={classes.bigAvatar} />
