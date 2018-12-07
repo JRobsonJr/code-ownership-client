@@ -5,6 +5,7 @@ import { Grid, withStyles } from '@material-ui/core';
 
 import StudentInfo from './StudentInfo';
 import ContributionList from './ContributionList';
+import OwnershipAnalysisTabs from './OwnershipAnalysisTabs';
 
 import { getStudent, getStudentContributions } from '../../api/mock-api';
 import { Student, Contribution } from '../../api/models';
@@ -50,6 +51,7 @@ class StudentPage extends Component<Props, State> {
                   justify="center"
                 >
                     <StudentInfo student={student} />
+                    <OwnershipAnalysisTabs />
                     <ContributionList contributions={studentContributions} />
                 </Grid>
             </div>
