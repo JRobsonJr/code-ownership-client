@@ -4,7 +4,8 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --inline --hot",
     "build": "webpack --display-error-details",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "flow": "flow"
   },
   "dependencies": {
     "@material-ui/core": "^3.1.1",

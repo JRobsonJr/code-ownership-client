@@ -8,21 +8,21 @@ import {
     MuiThemeProvider,
 } from '@material-ui/core';
 
-import ProjectPage from '../project-page/ProjectPage';
+import MainContent from './MainContent';
 
 const theme = createMuiTheme({
     palette: {
         background: { default: '#f0f0f0' },
     },
     typography: {
-        fontFamily: '"Roboto", sans-serif',
+        fontFamily: '"Lato", sans-serif',
     },
 });
 
 const App = () => (
     <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <ProjectPage />
+        <MainContent />
     </MuiThemeProvider>
 );
 

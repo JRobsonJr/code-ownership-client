@@ -3,7 +3,7 @@
 import React from 'react';
 
 import ArtifactListItem from './ArtifactListItem';
-import EntityList from './EntityList';
+import EntityList from '../common/EntityList';
 
 import { Artifact } from '../../api/models';
 
