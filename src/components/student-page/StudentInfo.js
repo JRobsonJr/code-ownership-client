@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Grid, Paper, Typography, Avatar, Chip, Button } from '@material-ui/core';
+import { Grid, Paper, Typography, Avatar, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import { Student } from '../../api/models';
